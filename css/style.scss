@@ -159,6 +159,7 @@ header {
     display: flex;
     justify-content: space-between;
     .banner-area__card {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -168,16 +169,18 @@ header {
       border: 5px solid $red-color;
       background-color: $text-color;
       color: $white-color;
+      overflow: hidden;
 
-      // img {
-      //   opacity: 0.6;
-      //   width: 370px;
-      //   height: 260px;
-      //   object-fit: cover;
+      img {
+        position: absolute;
+        opacity: 0.8;
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
 
-      //   background-position: top center;
-      //   background-repeat: no-repeat;
-      // }
+        background-position: top center;
+        background-repeat: no-repeat;
+      }
     }
   }
 }
@@ -231,7 +234,3 @@ header {
   }
 }
 /** -=============== MAIN ===============- */
-main {
-  background-color: lightcoral;
-  height: 800px;
-}
