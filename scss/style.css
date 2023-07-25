@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /** -=============== VARIABLE  ===============- */
 @font-face {
   font-family: MMC-Bold;
@@ -480,6 +481,7 @@ Scroll Top Button
 /** -=============== NEWWS ===============- */
 #news {
   margin: 100px 0;
+  /* dỏn home */
 }
 #news .container {
   display: flex;
