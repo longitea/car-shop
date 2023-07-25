@@ -10,7 +10,7 @@ $(document).ready(function () {
         margin: 10,
         items: 1,
         margin: 10,
-        autoHeight: true,
+        autoHeight: false,
         autoplay: true,
         autoplayTimeout: 3000,
         smartSpeed: 1000,

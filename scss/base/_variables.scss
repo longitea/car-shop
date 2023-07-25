@@ -1,0 +1,51 @@
+// == Import Font Url
+@font-face {
+  font-family: MMC-Bold;
+  src: url(../fonts/MMC-Bold.woff);
+}
+
+@font-face {
+  font-family: MMC-Medium;
+  src: url(../fonts/MMC-Medium.woff);
+}
+
+@font-face {
+  font-family: MMC-Regular;
+  src: url(../fonts/MMC-Regular.woff);
+}
+
+//== Typography Variable
+$baseFont: "MMC-Regular", sans-serif;
+$font-medium: "MMC-Medium", Arial, Helvetica, Verdana, sans-serif;
+$font-heading: "MMC-Bold", sans-serif;
+$baseFontSize: 15px;
+$fa-icon: "FontAwesome";
+$ion-icon: "Ionicons";
+
+//== Site Typography Colors
+$paragraph: #303030;
+$headingColor: #1b1b1c;
+$ashColor: #aaaaaa;
+$borderColor: #e1e1e1;
+
+//== Site Brand Color
+$brandColor: #e60012;
+
+//== Alternative Color
+$white: #ffffff;
+$offWhite: #d8d8d8;
+
+$black: #000000;
+$blackSoft: #1b1b1c;
+$red: #e74c3c;
+$gray: #f6f6f6;
+$gray-color: gray;
+
+//== Responsive Media Query Variables
+$xlmax-device: "only screen and (min-width: 1200px) and (max-width: 1599.98px)";
+$xl-device: "only screen and (min-width: 1200px)";
+$lg-device: "only screen and (min-width: 992px) and (max-width: 1199.98px)";
+$md-device: "only screen and (min-width: 768px) and (max-width: 991.98px)";
+$sm-device: "only screen and (max-width: 767.98px)";
+$xs-device: "only screen and (max-width: 575.98px)";
+$xxs-device: "only screen and (max-width: 479.98px)";

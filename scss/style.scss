@@ -1,0 +1,138 @@
+/** -=============== VARIABLE  ===============- */
+
+// Base
+@import "base/variables";
+@import "base/mixins";
+@import "base/typography";
+
+// Utilities
+@import "utilities/common";
+
+// Layout Header
+@import "layout/header";
+@import "layout/footer";
+
+/** -=============== GENERAL CLASS  ===============- */
+
+/** -=============== SLIDER ===============- */
+#slider-area {
+  margin-bottom: 100px;
+  position: relative;
+
+  .owl-height {
+  }
+
+  // SLIDER IMAGE
+  img {
+    display: block;
+    height: 700px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  // BUTTON NAV
+  .owl-nav {
+    // position: absolute;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 50px;
+
+    .button-next {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+    }
+
+    .button-next:hover {
+      opacity: 1;
+      background-color: $brandColor;
+    }
+  }
+}
+
+/** -=============== BANNER ===============- */
+
+#banner-area {
+  margin-bottom: 100px;
+  .banner-area__list-card {
+    display: flex;
+    justify-content: space-between;
+    .banner-area__card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 400px;
+      height: 250px;
+
+      border: 5px solid $brandColor;
+      background-color: $paragraph;
+      overflow: hidden;
+      h2 {
+        color: $white;
+      }
+
+      img {
+        position: absolute;
+        opacity: 0.8;
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+
+        background-position: top center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+#mitsubishi-version {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .version-title {
+    margin-bottom: 50px;
+    width: 45%;
+    text-align: center;
+    h1 {
+      margin: 15px;
+    }
+  }
+
+  .car-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .car-detail {
+      margin-bottom: 30px;
+      padding: 30px 0;
+      position: relative;
+      width: 30%;
+      background-color: $gray;
+
+      img {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 30px 0px;
+      }
+      .car-name {
+        padding: 0 30px;
+      }
+      .car-sale {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        width: 50px;
+        height: 20px;
+        text-align: center;
+        background-color: $black;
+        color: $white;
+      }
+    }
+  }
+}
+/** -=============== MAIN ===============- */

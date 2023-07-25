@@ -1,0 +1,469 @@
+/** -=============== VARIABLE  ===============- */
+@font-face {
+  font-family: MMC-Bold;
+  src: url(../fonts/MMC-Bold.woff);
+}
+@font-face {
+  font-family: MMC-Medium;
+  src: url(../fonts/MMC-Medium.woff);
+}
+@font-face {
+  font-family: MMC-Regular;
+  src: url(../fonts/MMC-Regular.woff);
+}
+/*=====================================
+   01. Typography CSS
+===================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  font-size: 15px;
+  font-family: "MMC-Regular", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Remove text-shadow in selection highlight. */
+::-moz-selection {
+  background: #e60012;
+  color: #ffffff;
+  text-shadow: none;
+}
+::selection {
+  background: #e60012;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+/* Anchor Tag Default Style */
+a {
+  transition: 0.4s;
+  outline: none;
+  text-decoration: none;
+}
+a:hover, a:active, a:focus {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+textarea:focus, textarea:active,
+input:focus,
+input:active {
+  outline: none;
+}
+
+/* Heading Default Style */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #1b1b1c;
+  line-height: 1.2;
+  font-family: "MMC-Bold", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+/* Paragraph Margin */
+p {
+  font-family: "MMC-Regular", sans-serif;
+  font-size: 15px;
+  margin-bottom: 15px;
+  line-height: 24px;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  box-shadow: none;
+  transition: 0.4s;
+}
+button:active, button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+[data-mfp-src],
+.btn-img-popup {
+  cursor: zoom-in;
+}
+
+.form-message.alert {
+  margin-top: 10px;
+}
+
+/*----------------------
+3.2 - Container
+-----------------------*/
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/** -=============== HEADER ===============- */
+header {
+  background-color: #ffffff;
+  padding: 15px 0;
+  border-bottom: 1px solid #000000;
+}
+@media only screen and (max-width: 767.98px) {
+  header {
+    padding: 15px 0;
+  }
+}
+header #navigation-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+header #navigation-header #navigation-header__logoLink {
+  display: inline-block;
+  margin-right: auto;
+}
+header #navigation-header #navigation-header__logoLink img {
+  display: block;
+}
+header #navigation-header #navigation-header__navBtnList {
+  display: flex;
+}
+header #navigation-header #navigation-header__navBtnList li {
+  margin-right: 35px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+  header #navigation-header #navigation-header__navBtnList li {
+    margin-right: 20px;
+  }
+}
+header #navigation-header #navigation-header__navBtnList li:last-child {
+  margin-right: 0;
+}
+header #navigation-header #navigation-header__navBtnList a {
+  line-height: 70px;
+  color: #303030;
+  font-size: 20px;
+  font-family: "MMC-Bold", sans-serif;
+  font-weight: 600;
+  display: block;
+  text-transform: uppercase;
+}
+header #navigation-header #navigation-header__navBtnList a:hover {
+  color: #e60012;
+}
+
+/*===========================
+23. Footer Style CSS
+===========================*/
+footer .footer-widget-area {
+  background-color: #1b1b1c;
+  padding: 100px 0;
+  color: #d8d8d8;
+}
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  footer .footer-widget-area {
+    padding: 80px 0;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  footer .footer-widget-area {
+    padding: 60px 0;
+  }
+}
+footer .footer-copyright-area {
+  background-color: #000000;
+  color: #d8d8d8;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-widget-content {
+  display: flex;
+  gap: 10;
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  .footer-widget-content {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .footer-widget-content {
+    padding: 60px 0;
+  }
+}
+.footer-widget-content .logo-quotes {
+  flex: 30%;
+  max-width: 30%;
+  padding-right: 10px;
+}
+.footer-widget-content .logo-quotes p {
+  max-width: 80%;
+}
+
+.widget-item {
+  margin-top: 38px;
+  flex: 20%;
+  max-width: 20%;
+  padding: 0 4px;
+}
+.widget-item:last-child {
+  flex: 20%;
+  max-width: 25%;
+}
+.widget-item .widget-title {
+  color: #d8d8d8;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
+  margin-top: -1px;
+  margin-bottom: 22px;
+  text-decoration: underline;
+}
+@media only screen and (max-width: 767.98px) {
+  .widget-item .widget-title {
+    margin-bottom: 15px;
+  }
+}
+.widget-item address {
+  line-height: 2;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.widget-list li {
+  line-height: 2;
+}
+.widget-list li a {
+  font-weight: 300;
+  color: #d8d8d8;
+  transition: 0.2s;
+}
+.widget-list li a:hover {
+  color: #e60012;
+  padding-left: 5px;
+}
+
+.about-widget img {
+  max-width: 120px;
+  margin-bottom: 7px;
+}
+
+.hotline__item {
+  margin-top: 5px;
+}
+.hotline__item h4 {
+  color: #d8d8d8;
+}
+.hotline__item h4:hover {
+  color: #e60012;
+  text-shadow: 1px 1px 4px white;
+  padding-left: 5px;
+}
+
+.copyright-txt {
+  margin-top: 25px;
+  font-weight: 500;
+}
+@media only screen and (max-width: 767.98px) {
+  .copyright-txt {
+    margin-top: 15px;
+  }
+}
+
+/*--------------------------------
+Scroll Top Button
+----------------------------------*/
+.btn-scroll-top {
+  background-color: #e60012;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  height: 50px;
+  width: 50px;
+  z-index: 999;
+}
+@media only screen and (max-width: 767.98px) {
+  .btn-scroll-top {
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+  }
+}
+.btn-scroll-top:hover {
+  background-color: #1b1b1c;
+}
+.btn-scroll-top.show {
+  bottom: 30px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/** -=============== GENERAL CLASS  ===============- */
+/** -=============== SLIDER ===============- */
+#slider-area {
+  margin-bottom: 100px;
+  position: relative;
+}
+#slider-area img {
+  display: block;
+  height: 700px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+}
+#slider-area .owl-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 50px;
+}
+#slider-area .owl-nav .button-next {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+}
+#slider-area .owl-nav .button-next:hover {
+  opacity: 1;
+  background-color: #e60012;
+}
+
+/** -=============== BANNER ===============- */
+#banner-area {
+  margin-bottom: 100px;
+}
+#banner-area .banner-area__list-card {
+  display: flex;
+  justify-content: space-between;
+}
+#banner-area .banner-area__list-card .banner-area__card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 250px;
+  border: 5px solid #e60012;
+  background-color: #303030;
+  overflow: hidden;
+}
+#banner-area .banner-area__list-card .banner-area__card h2 {
+  color: #ffffff;
+}
+#banner-area .banner-area__list-card .banner-area__card img {
+  position: absolute;
+  opacity: 0.8;
+  width: 100%;
+  height: 260px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+#mitsubishi-version {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#mitsubishi-version .version-title {
+  margin-bottom: 50px;
+  width: 45%;
+  text-align: center;
+}
+#mitsubishi-version .version-title h1 {
+  margin: 15px;
+}
+#mitsubishi-version .car-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#mitsubishi-version .car-list .car-detail {
+  margin-bottom: 30px;
+  padding: 30px 0;
+  position: relative;
+  width: 30%;
+  background-color: #f6f6f6;
+}
+#mitsubishi-version .car-list .car-detail img {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 0px;
+}
+#mitsubishi-version .car-list .car-detail .car-name {
+  padding: 0 30px;
+}
+#mitsubishi-version .car-list .car-detail .car-sale {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/** -=============== MAIN ===============- *//*# sourceMappingURL=style.css.map */
