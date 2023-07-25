@@ -19,9 +19,6 @@
   margin-bottom: 100px;
   position: relative;
 
-  .owl-height {
-  }
-
   // SLIDER IMAGE
   img {
     display: block;
@@ -57,31 +54,43 @@
   margin-bottom: 100px;
   .banner-area__list-card {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 5%;
+    // justify-content: space-between;
     .banner-area__card {
-      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 400px;
-      height: 250px;
 
-      border: 5px solid $brandColor;
-      background-color: $paragraph;
-      overflow: hidden;
-      h2 {
-        color: $white;
+      width: 30%;
+      padding: 12px 36px;
+      // margin: 20px 0;
+
+      border: 2px solid $black;
+      transition: 0.2s;
+
+      @media #{$md-device} {
+        width: 70%;
+        margin: 20px auto;
       }
 
-      img {
-        position: absolute;
-        opacity: 0.8;
+      @media #{$sm-device} {
         width: 100%;
-        height: 260px;
-        object-fit: cover;
+        margin: 20px auto;
+      }
+      h5 {
+        color: $paragraph;
+        letter-spacing: 3px;
+      }
 
-        background-position: top center;
-        background-repeat: no-repeat;
+      &:hover {
+        background-image: linear-gradient(-60deg, #000 50%, transparent 0);
+        background-position: 99% 50%;
+        background-color: $black;
+        h5 {
+          color: white;
+        }
       }
     }
   }
@@ -97,7 +106,7 @@
     width: 45%;
     text-align: center;
     h1 {
-      margin: 15px;
+      margin: 40px;
     }
   }
 
@@ -135,4 +144,105 @@
     }
   }
 }
-/** -=============== MAIN ===============- */
+
+/** -=============== NEWWS ===============- */
+
+#news {
+  margin: 100px 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .news-description {
+      width: 50%;
+      margin: 40px 0 30px;
+      text-align: center;
+    }
+  }
+
+  .big-news {
+    position: relative;
+    margin-bottom: 30px;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      overflow: hidden;
+    }
+
+    .big-news-title {
+      position: absolute;
+      z-index: 10;
+      bottom: 25%;
+      left: 10%;
+      text-shadow: 5px 5px 20px black;
+      h3 {
+        color: white;
+      }
+    }
+
+    a {
+      background-color: white;
+      position: absolute;
+      z-index: 10;
+      bottom: 10%;
+      left: 10%;
+      box-shadow: 2px 2px 5px black;
+    }
+  }
+
+  .list-news {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .list-news-card {
+      background-color: $gray;
+      width: 30%;
+      height: 450px;
+      display: flex;
+
+      flex-direction: column;
+      text-align: center;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        overflow: hidden;
+      }
+
+      .title-news-card {
+        padding: 20px;
+      }
+      button {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .btn-more-detail {
+    display: block;
+    text-align: center;
+    width: 180px;
+    height: 47px;
+    line-height: 47px;
+    border: 1px solid $borderColor;
+    border-radius: 3px;
+    font-family: $font-heading;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: $paragraph;
+    overflow: hidden;
+
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+}
