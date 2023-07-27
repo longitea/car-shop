@@ -458,6 +458,16 @@ Scroll Top Button
   position: relative;
   width: 30%;
   background-color: #f6f6f6;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+#mitsubishi-version .car-list .car-detail:hover {
+  background-color: gray;
+  overflow: hidden;
+}
+#mitsubishi-version .car-list .car-detail:hover img,
+#mitsubishi-version .car-list .car-detail:hover .car-sale {
+  transform: scale(1.2, 1.2);
 }
 #mitsubishi-version .car-list .car-detail img {
   width: 100%;
@@ -472,9 +482,9 @@ Scroll Top Button
   top: 30px;
   left: 30px;
   width: 50px;
-  height: 20px;
+  line-height: 20px;
   text-align: center;
-  background-color: #000000;
+  background-color: #e74c3c;
   color: #ffffff;
 }
 
