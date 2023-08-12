@@ -19,7 +19,6 @@
 </head>
 
 <body>
-
     <header>
         <div class="container">
             <nav id="navigation-header">
@@ -27,7 +26,12 @@
                     <img src="image/header/logo-mitsubishicars.svg" id="navigation-header__imgLogo"
                         alt="Mitsubishi-logo">
                 </a>
-                <ul id="navigation-header__navBtnList">
+                <div id="mobile-header">
+                    <button href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <ul id="navigation-header__navBtnList" class="none">
                     <li class="navigation-header__navBtnItem">
                         <a href="index.html">
                             trang chủ
@@ -39,7 +43,7 @@
                         </a>
                     </li>
                     <li class="navigation-header__navBtnItem">
-                        <a href="product.html">
+                        <a class="active" href="product.html">
                             Sản phẩm
                         </a>
                     </li>
@@ -60,9 +64,11 @@
                     </li>
 
                 </ul>
+
             </nav>
         </div>
     </header>
+
 
     <!--*=============== PRODUCT: START ===============*-->
     <div class="app-container">
@@ -674,6 +680,25 @@
 
 
     <script src="js/product.js"></script>
+
+
+
+
+
+    <!-- Show hide header menu mobile -->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("navigation-header__navBtnList");
+            if (x.className == "hide" || x.className == "none") {
+                x.className = "show";
+                console.log(x);
+            } else {
+                x.className = "hide";
+                console.log(x);
+            }
+
+        }
+    </script>
 </body>
 
 </html>

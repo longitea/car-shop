@@ -103,10 +103,10 @@
 
   .version-title {
     margin-bottom: 50px;
-    width: 45%;
+    width: 70%;
     text-align: center;
     h1 {
-      margin: 40px;
+      margin-bottom: 40px;
     }
   }
 
@@ -117,13 +117,22 @@
     flex-wrap: wrap;
 
     .car-detail {
-      margin-bottom: 30px;
+      flex: 1 1 30%;
+      margin: 10px;
       padding: 30px 0;
       position: relative;
-      width: 30%;
+      // width: 30%;
       background-color: $gray;
       transition: all 0.3s;
       overflow: hidden;
+
+      @media #{$tablet} {
+        flex: 40%;
+      }
+
+      @media #{$mobile-landscape} {
+        flex: 100%;
+      }
 
       &:hover {
         img,
@@ -202,20 +211,37 @@
       bottom: 10%;
       left: 10%;
       box-shadow: 2px 2px 5px black;
+      @media #{$mobile} {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 
   .list-news {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 5%;
     width: 100%;
 
     .list-news-card {
       background-color: $gray;
-      width: 30%;
-      height: 450px;
+      flex: 30%;
+      // height: 450px;
       display: flex;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+
+      @media #{$tablet} {
+        flex: 1 1 40%;
+        gap: 20px 20px;
+      }
+
+      @media #{$mobile} {
+        flex: 1 1 50%;
+      }
 
       flex-direction: column;
       text-align: center;

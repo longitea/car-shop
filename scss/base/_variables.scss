@@ -45,8 +45,28 @@ $gray-color: gray;
 //== Responsive Media Query Variables
 $xlmax-device: "only screen and (min-width: 1200px) and (max-width: 1599.98px)";
 $xl-device: "only screen and (min-width: 1200px)";
+
+// Tablet
 $lg-device: "only screen and (min-width: 992px) and (max-width: 1199.98px)";
+
+// Điện Thoại
 $md-device: "only screen and (min-width: 768px) and (max-width: 991.98px)";
 $sm-device: "only screen and (max-width: 767.98px)";
+
 $xs-device: "only screen and (max-width: 575.98px)";
 $xxs-device: "only screen and (max-width: 479.98px)";
+
+/*=====================================
+  Web Breakpoints
+===================================== */
+
+// 01. PC desktop screens > 1440px
+$desktop: "(min-width: 1440px)";
+// 02. Laptop devices < 1440px
+$laptop: "only screen and (max-width: 1339px)";
+// 03. Tablet devices < 1024px
+$tablet: "only screen and (max-width: 1023px)";
+// 04. Mobile devices (landscape) < 768px
+$mobile-landscape: "only screen and (max-width: 767px)";
+// 05. Mobile devices (Portrait)  < 480px
+$mobile: "only screen and (max-width: 480px)";

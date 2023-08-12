@@ -7,10 +7,6 @@ footer {
     padding: 100px 0;
     color: $offWhite;
 
-    @media #{$md-device} {
-      padding: 80px 0;
-    }
-
     @media #{$sm-device} {
       padding: 60px 0;
     }
@@ -25,23 +21,23 @@ footer {
 }
 
 .footer-widget-content {
+  width: 100%;
   display: flex;
-  gap: 10;
+  justify-content: space-around;
   flex-wrap: wrap;
 
-  @media #{$md-device} {
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-
-  @media #{$sm-device} {
-    padding: 60px 0;
-  }
+  // @media #{$mobile-landscape} {
+  //   flex-direction: column;
+  //   flex-wrap: wrap;
+  // }
 
   .logo-quotes {
-    flex: 30%;
+    width: 30%;
     max-width: 30%;
     padding-right: 10px;
+    @media #{$mobile-landscape} {
+      flex: 100%;
+    }
     p {
       max-width: 80%;
     }
@@ -50,13 +46,38 @@ footer {
 
 .widget-item {
   margin-top: 38px;
-  flex: 20%;
-  max-width: 20%;
-  padding: 0 4px;
+  margin-bottom: 20px;
+  min-width: 20%;
+
+  &:first-child {
+    margin-top: -2px;
+    min-width: 30%;
+    h4 {
+      margin-bottom: 13px;
+    }
+    .widget-body {
+      width: 250px;
+    }
+
+    @media #{$mobile-landscape} {
+      .widget-body {
+        width: 100%;
+      }
+    }
+  }
 
   &:last-child {
-    flex: 20%;
-    max-width: 25%;
+    min-width: 25%;
+
+    .widget-body {
+      width: 300px;
+    }
+
+    @media #{$mobile-landscape} {
+      .widget-body {
+        width: 100%;
+      }
+    }
   }
 
   .widget-title {
@@ -77,6 +98,16 @@ footer {
     line-height: 2;
     margin-bottom: 0;
     font-weight: 500;
+  }
+
+  @media #{$tablet} {
+    width: 40%;
+  }
+
+  @media #{$mobile-landscape} {
+    // flex-direction: column;
+    width: 80%;
+    text-align: center;
   }
 }
 

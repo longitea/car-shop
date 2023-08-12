@@ -13,6 +13,9 @@
   src: url(../fonts/MMC-Regular.woff);
 }
 /*=====================================
+  Web Breakpoints
+===================================== */
+/*=====================================
    01. Typography CSS
 ===================================== */
 * {
@@ -20,6 +23,10 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 100%;
+}
+
+html {
+  font-size: 16px;
 }
 
 body {
@@ -155,9 +162,10 @@ button:active, button:focus {
 
 /** -=============== HEADER ===============- */
 header {
+  position: relative;
   background-color: #ffffff;
   padding: 15px 0;
-  border-bottom: 1px solid #000000;
+  border-bottom: 2px solid #000000;
 }
 @media only screen and (max-width: 767.98px) {
   header {
@@ -178,14 +186,30 @@ header #navigation-header #navigation-header__logoLink img {
   display: block;
 }
 header #navigation-header #navigation-header__navBtnList {
+  position: relative;
   display: flex;
+}
+@media only screen and (max-width: 767px) {
+  header #navigation-header #navigation-header__navBtnList {
+    position: absolute;
+    top: 108px;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+  }
 }
 header #navigation-header #navigation-header__navBtnList li {
   margin-right: 35px;
 }
-@media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+@media only screen and (max-width: 1023px) {
   header #navigation-header #navigation-header__navBtnList li {
-    margin-right: 20px;
+    margin-right: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  header #navigation-header #navigation-header__navBtnList li {
+    margin: 0;
+    width: 100%;
   }
 }
 header #navigation-header #navigation-header__navBtnList li:last-child {
@@ -194,14 +218,66 @@ header #navigation-header #navigation-header__navBtnList li:last-child {
 header #navigation-header #navigation-header__navBtnList a {
   line-height: 70px;
   color: #303030;
-  font-size: 20px;
+  font-size: 1.3rem;
   font-family: "MMC-Bold", sans-serif;
   font-weight: 600;
   display: block;
   text-transform: uppercase;
 }
-header #navigation-header #navigation-header__navBtnList a:hover {
+@media only screen and (max-width: 1023px) {
+  header #navigation-header #navigation-header__navBtnList a {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  header #navigation-header #navigation-header__navBtnList a {
+    padding: 0 45px;
+    text-align: end;
+  }
+}
+header #navigation-header #navigation-header__navBtnList a:hover,
+header #navigation-header #navigation-header__navBtnList .active {
+  transform: none;
+  opacity: 1;
+  visibility: visible;
   color: #e60012;
+}
+@media only screen and (max-width: 767px) {
+  header #navigation-header #navigation-header__navBtnList a:hover,
+  header #navigation-header #navigation-header__navBtnList .active {
+    background-color: black;
+  }
+}
+
+#mobile-header {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  #mobile-header {
+    display: block;
+  }
+}
+#mobile-header button {
+  font-size: 2rem;
+  padding: 20px;
+  color: #303030;
+}
+#mobile-header button:hover {
+  color: #e60012;
+}
+
+.show {
+  z-index: 2;
+}
+
+.hide {
+  z-index: -1;
+}
+
+@media only screen and (max-width: 767px) {
+  .none {
+    display: none !important;
+  }
 }
 
 /*===========================
@@ -211,11 +287,6 @@ footer .footer-widget-area {
   background-color: #1b1b1c;
   padding: 100px 0;
   color: #d8d8d8;
-}
-@media only screen and (min-width: 768px) and (max-width: 991.98px) {
-  footer .footer-widget-area {
-    padding: 80px 0;
-  }
 }
 @media only screen and (max-width: 767.98px) {
   footer .footer-widget-area {
@@ -230,25 +301,20 @@ footer .footer-copyright-area {
 }
 
 .footer-widget-content {
+  width: 100%;
   display: flex;
-  gap: 10;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
-@media only screen and (min-width: 768px) and (max-width: 991.98px) {
-  .footer-widget-content {
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-}
-@media only screen and (max-width: 767.98px) {
-  .footer-widget-content {
-    padding: 60px 0;
-  }
-}
 .footer-widget-content .logo-quotes {
-  flex: 30%;
+  width: 30%;
   max-width: 30%;
   padding-right: 10px;
+}
+@media only screen and (max-width: 767px) {
+  .footer-widget-content .logo-quotes {
+    flex: 100%;
+  }
 }
 .footer-widget-content .logo-quotes p {
   max-width: 80%;
@@ -256,13 +322,34 @@ footer .footer-copyright-area {
 
 .widget-item {
   margin-top: 38px;
-  flex: 20%;
-  max-width: 20%;
-  padding: 0 4px;
+  margin-bottom: 20px;
+  min-width: 20%;
+}
+.widget-item:first-child {
+  margin-top: -2px;
+  min-width: 30%;
+}
+.widget-item:first-child h4 {
+  margin-bottom: 13px;
+}
+.widget-item:first-child .widget-body {
+  width: 250px;
+}
+@media only screen and (max-width: 767px) {
+  .widget-item:first-child .widget-body {
+    width: 100%;
+  }
 }
 .widget-item:last-child {
-  flex: 20%;
-  max-width: 25%;
+  min-width: 25%;
+}
+.widget-item:last-child .widget-body {
+  width: 300px;
+}
+@media only screen and (max-width: 767px) {
+  .widget-item:last-child .widget-body {
+    width: 100%;
+  }
 }
 .widget-item .widget-title {
   color: #d8d8d8;
@@ -282,6 +369,17 @@ footer .footer-copyright-area {
   line-height: 2;
   margin-bottom: 0;
   font-weight: 500;
+}
+@media only screen and (max-width: 1023px) {
+  .widget-item {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .widget-item {
+    width: 80%;
+    text-align: center;
+  }
 }
 
 .widget-list li {
@@ -440,11 +538,11 @@ Scroll Top Button
 }
 #mitsubishi-version .version-title {
   margin-bottom: 50px;
-  width: 45%;
+  width: 70%;
   text-align: center;
 }
 #mitsubishi-version .version-title h1 {
-  margin: 40px;
+  margin-bottom: 40px;
 }
 #mitsubishi-version .car-list {
   width: 100%;
@@ -453,13 +551,23 @@ Scroll Top Button
   flex-wrap: wrap;
 }
 #mitsubishi-version .car-list .car-detail {
-  margin-bottom: 30px;
+  flex: 1 1 30%;
+  margin: 10px;
   padding: 30px 0;
   position: relative;
-  width: 30%;
   background-color: #f6f6f6;
   transition: all 0.3s;
   overflow: hidden;
+}
+@media only screen and (max-width: 1023px) {
+  #mitsubishi-version .car-list .car-detail {
+    flex: 40%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #mitsubishi-version .car-list .car-detail {
+    flex: 100%;
+  }
 }
 #mitsubishi-version .car-list .car-detail:hover {
   background-color: gray;
@@ -533,21 +641,41 @@ Scroll Top Button
   left: 10%;
   box-shadow: 2px 2px 5px black;
 }
+@media only screen and (max-width: 480px) {
+  #news .big-news a {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 #news .list-news {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 5%;
   width: 100%;
 }
 #news .list-news .list-news-card {
   background-color: #f6f6f6;
-  width: 30%;
-  height: 450px;
+  flex: 30%;
   display: flex;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
   flex-direction: column;
   text-align: center;
   justify-content: space-between;
   align-items: center;
+}
+@media only screen and (max-width: 1023px) {
+  #news .list-news .list-news-card {
+    flex: 1 1 40%;
+    gap: 20px 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #news .list-news .list-news-card {
+    flex: 1 1 50%;
+  }
 }
 #news .list-news .list-news-card img {
   width: 100%;

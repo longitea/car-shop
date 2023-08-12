@@ -1,9 +1,10 @@
 /** -=============== HEADER ===============- */
 
 header {
+  position: relative;
   background-color: $white;
   padding: 15px 0;
-  border-bottom: 1px solid $black;
+  border-bottom: 2px solid $black;
 
   @media #{$sm-device} {
     padding: 15px 0;
@@ -25,34 +26,96 @@ header {
       }
     }
 
-    // CATEGORY
+    // CATEGORY NAV LINK
     #navigation-header__navBtnList {
+      position: relative;
       display: flex;
+      @media #{$mobile-landscape} {
+        position: absolute;
+        top: 108px;
+        // z-index: 2;
+        flex-direction: column;
+        width: 100%;
+        background-color: $white;
+      }
+
       li {
         // line-height: 40px;
         margin-right: 35px;
 
-        @media #{$lg-device} {
-          margin-right: 20px;
+        // Response For Tablet
+        @media #{$tablet} {
+          margin-right: 15px;
+        }
+        @media #{$mobile-landscape} {
+          margin: 0;
+          width: 100%;
         }
 
         &:last-child {
           margin-right: 0;
         }
       }
+
       a {
         line-height: 70px;
         color: $paragraph;
-        font-size: 20px;
+        font-size: 1.3rem;
         font-family: $font-heading;
         font-weight: 600;
         display: block;
         text-transform: uppercase;
+
+        @media #{$tablet} {
+          font-size: 1rem;
+        }
+
+        @media #{$mobile-landscape} {
+          padding: 0 45px;
+          text-align: end;
+        }
       }
 
-      a:hover {
+      a:hover,
+      .active {
+        transform: none;
+        @include show;
         color: $brandColor;
+        @media #{$mobile-landscape} {
+          background-color: black;
+        }
       }
     }
+  }
+}
+
+#mobile-header {
+  display: none;
+
+  @media #{$mobile-landscape} {
+    display: block;
+  }
+  button {
+    font-size: 2rem;
+    padding: 20px;
+    color: $paragraph;
+
+    &:hover {
+      color: $brandColor;
+    }
+  }
+}
+
+.show {
+  z-index: 2;
+}
+
+.hide {
+  z-index: -1;
+}
+
+.none {
+  @media #{$mobile-landscape} {
+    display: none !important;
   }
 }
